@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   
+    <title>Checkout</title>
+    <style>
+            @import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
+body{
+    margin: 0;
+        background: linear-gradient(108.81deg, #7C8761 -21.51%, #80AF81 36.42%, rgba(26, 83, 25, 0.9) 87.8%);
+        height: 100vh;
+        background-size: cover;
+        background-attachment: fixed;
+}
+.navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        padding-right: 30px;
+        margin-bottom: 30px;
+    }
+    #logo{
+        font-family: Pristina;
+        margin-left: 30px;
+        width: 96px;
+        height: 72px;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 71.81px;
+        color: white;
+    }
+    .list-element{
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: left;
+        background: #FFFFFF8F;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: auto;
+    }
+    .nav-links li {
+        margin: 0px 15px;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+    }
+    .icons {
+        display: flex;
+        align-items: center;
+    }
+    .icon {
+        fill: #FFFFFF8F;
+        width: 24px;
+        height: auto;
+        margin-right: 15px;
+    }
+    .dropdown {
+        margin-right: auto;
+    }
+    .dark-mode-icon {
+        fill: #FFFFFF8F;
+        width: 24px;
+        height: auto;
+        margin-right: auto;
+    }
+    .logout-button {
+        width: 85px;
+        height: 42px;
+        padding: 0px 10px 0px 10px;
+        gap: 0px;
+        border-radius: 45px;
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+        cursor: pointer;
+        background: #7C8761AB;
+        border: 1px solid #FCFCFC;
+        color:#FFFFFF8F;
+    }
+    .bobutton{
+        padding: 10px;
+        margin: 3px;
+        background-color: transparent;
+        border: none;
+        color:#FFFFFF8F;
+    }
+    .bobutton:hover{
+        background: #7C8761AB;
+    }
+    .bobutton:focus{
+        background: #7C8761AB;
+    }
+    .dropdown-menu{
+        background: #7C8761AB;
+    }
+    .dropdown-menu a{
+        text-decoration: none;
+        padding: 15px;
+        color: black;
+    }
+    .dropdown-menu li{
+        padding: 5px;
+    }
+    .dropdown-menu li:hover{
+        background-color: hwb(0 91% 7% / 0.585);
+    }
+#contact{
+        max-width: 960px;
+        margin: 0 auto ;
+        height: 650px;
+    }
+    .contact-container {
+        display: flex;
+        max-width: 100%;
+        margin: 0 auto;
+        background: #D6EFD83B;
+        border-radius: 50px;
+        width: 100%;
+        margin-top: 70px;
+        height: 85%;
+        margin-top: 100px;
+    }
+    .form-section {
+        margin-top: 40px;
+        flex: 1.5;
+        padding: 20px;
+    }
+    .form-row {
+        margin-bottom: 20px;
+    }
+    .form-row input {
+        width: 38%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #1A5319;
+        background-color: #D6EFD8;
+        -webkit-background-clip: text;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        margin-left: 25px;
+        margin-right: 25px;
+
+        margin-bottom: 20px;
+        outline: none;
+        text-transform: uppercase;
+    }
+    .form-row button {
+        cursor: pointer;
+        position: relative;
+        width: 44%;
+        max-width: 383px;
+        margin: 0 auto;
+        display: block;
+        padding: 8px 0px 13px 0px;
+        border-radius: 45px;
+        border: 1px;
+        background: #7C8761AB;
+        border: 1px solid #FCFCFC;
+        color: #ffffff;
+        font-size: 18px;
+        height: 50px;
+    }
+    .photo-section {
+        flex: 1;
+    }
+    .photo-section img {
+        width: 100%;
+        height: 100%;
+ 
+        object-fit:fill;
+        border-radius: 0 50px 50px 0;
+    }
+    ::placeholder {
+        color: white;
+    }
+    ::-webkit-input-placeholder {
+        color: white;
+    }
+    ::-moz-placeholder {
+        color: white;
+    }
+    :-ms-input-placeholder {
+        color: white;
+    }
+    :-moz-placeholder {
+        color: white;
+    }
+    h2{
+        font-family: Poppins;
+font-size: 26px;
+font-weight: 600;
+line-height: 45px;
+text-align: center;
+text-transform: uppercase;
+color: #1A5319;
+
+    }
+    .button-row {
+        display: flex;
+
+    }
+    .footer {
+        background: linear-gradient(87.24deg, rgba(124, 135, 97, 0.5) 0.78%, rgba(26, 83, 25, 0.5) 92.44%);
+        padding: 70px 20px 50px;
+        color: white;
+        margin-top: 50px;
+    }
+    #footer-logo{
+        font-family: Pristina;
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 71px;
+        text-align: left;
+        background: #FFFFFF;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        max-width: 150px;
+        margin-bottom: 30px;
+    }
+    #footer-par{
+        font-family: Poppins;
+        width: 300px;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 24px;
+        background: #FFFFFF;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+    }
+    .footer-header {
+        font-family: Poppins;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 39px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    .footer-links a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 8px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: center;
+    }
+    .footer-contact{
+        text-align: center;
+    }
+    .footer-contact svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .footer-social{
+        text-align: center;
+    }
+    .footer-social a{
+        text-decoration: none;
+    }
+    .footer-social svg {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid white;
+        border-radius: 50px;
+    }
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        .icons, .dropdown, .dark-mode-icon, .logout-button {
+            margin-top: 10px;
+        }
+        .contact-container {
+            height: auto;
+            margin-top: 30px;
+            width: 80%;
+        }
+
+        .form-section {
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .form-row input {
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .form-row button {
+            width: 40%;
+            max-width: none;
+        }
+        .photo-section{
+            flex: 0;
+        }
+        .photo-section img {
+            display: none;
+        }
+
+        h2 {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+
+        .button-row button {
+            margin-bottom: 10px;
+        }
+        .footer-column {
+            flex-basis: 50%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-links {
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-links li {
+            margin: 10px 0;
+        }
+        #contact {
+            height: auto;
+        }
+
+        .contact-container {
+            border-radius: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    }
+    
+    .pop-up {
+            display: none;
+            position: absolute;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 449px;
+            height: 300px;
+            gap: 0px;
+            opacity: 0px;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 20px;
+            left: 40%;
+            top:30%;
+            background-color: rgba(256, 256, 256, 0.7);
+            backdrop-filter: blur(5px);
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }  
+
+        .inner p{
+            position: relative;
+            width: 100%;
+            height: 90px;
+            padding-top: 25px;
+            padding-bottom: 0;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: center;
+            background: #80AF81;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+         #yes{
+            clear: both;
+            font-size: 18px;
+            width: 276px;
+            height: 50px;
+            margin-top: 0;
+            padding: 10px 0px 10px 0px;
+            gap: 0px;
+            border-radius: 45px;
+            border: 1px;
+            opacity: 0px;
+            background: #7C8761AB;
+            color: white;
+            border: 1px solid #FCFCFC;
+        }
+   #yes:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+     #no{
+            font-family: Poppins;
+            font-size: 18px;
+            width: 276px;
+            height: 50px;
+            margin-top: 0;
+            padding: 10px 0px 10px 0px;
+            gap: 0px;
+            border-radius: 45px;
+            border: 1px;
+            text-align: center;
+            background: #FCFCFC;
+            clear: both;
+            color: #7C8761AB;
+            border: 1px solid #7C8761AB;
+
+        }
+         #no:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="logo" id="logo">logo</div>
+        <ul class="nav-links">
+            <li class="list-element"><a href="#">Home</a></li>
+            <li class="list-element"><a href="#">About Us</a></li>
+            <li class="list-element"><a href="#">Products</a></li>
+            <li class="list-element"><a href="#">Services</a></li>
+            <li class="list-element"><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="icons">
+            <svg class="list-element icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <svg class="list-element icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg class="list-element icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <a id="bobutton" class="bobutton btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+    
+            <ul class="dropdown-menu">
+            <li class="list-element"><a href="#en" data-reload>English</a></li>
+            <li class="list-element"><a href="#ar" data-reload>Arabic</a></li>
+
+            </ul>
+        </div>
+        <svg class="list-element dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <button onclick="pop()" class=" logout-button">Logout</button>
+    </nav>
+    
+
+    <div id="contact">
+        <div class="contact-container">
+            <div class="form-section">
+                <form>
+                    <h2>billing adress</h2>
+                    <div class="form-row">
+                        <input type="text" placeholder="full Name">
+                        <input type="text" placeholder="email">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="city">
+                        <input type="text" placeholder="adress">
+                    </div>
+                    <h2>payment ditels</h2>
+                    <div class="form-row">
+                        <input type="text" placeholder="name on card">
+                        <input type="text" placeholder="credit card number">
+                    </div>
+                    <div class="form-row button-row">
+                        <button onclick="event.preventDefault(); window.location.href='order.html'">back</button>
+                        <button>send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="photo-section">
+                <img src="1.png">
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h1 id="footer-logo">logo</h1>
+                <p id="footer-par">owalos provide artificial handmade flowers to make your home beautiful </p>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-header">Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#">Home</a>
+                    <a href="#">products</a>
+                    <a href="#">about us</a>
+                    <a href="#">services</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-header">Contact Us</h3>
+                <div class="footer-contact">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        8979925
+                    </p>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        info@gmail.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-header">Follow Us</h3>
+                <div class="footer-social">
+                    <a href="#">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.5753 0.997483C10.9165 0.930601 10.2544 0.898053 9.59195 0.899983C7.3957 0.899983 6.0308 2.23873 6.0308 4.39373V5.85686H4.18591C4.0993 5.85686 4.01625 5.88978 3.95501 5.94839C3.89378 6.00699 3.85938 6.08648 3.85938 6.16936V8.57561C3.85938 8.65849 3.89378 8.73797 3.95501 8.79658C4.01625 8.85518 4.0993 8.88811 4.18591 8.88811H6.0308V13.7131C6.0308 13.796 6.06521 13.8755 6.12644 13.9341C6.18768 13.9927 6.27073 14.0256 6.35733 14.0256H8.95521C9.04181 14.0256 9.12487 13.9927 9.1861 13.9341C9.24734 13.8755 9.28174 13.796 9.28174 13.7131V8.88811H11.1208C11.2 8.88814 11.2766 8.86058 11.3362 8.81055C11.3958 8.76053 11.4344 8.69146 11.4447 8.61623L11.7693 6.20998C11.7753 6.16588 11.7714 6.12105 11.7579 6.07849C11.7444 6.03593 11.7215 5.99662 11.6909 5.96319C11.6602 5.92976 11.6225 5.90299 11.5801 5.88465C11.5378 5.86631 11.4918 5.85684 11.4453 5.85686H9.28174V4.63248C9.28174 4.02623 9.40909 3.77311 10.2013 3.77311H11.5328C11.6194 3.77311 11.7025 3.74018 11.7637 3.68158C11.825 3.62297 11.8594 3.54349 11.8594 3.46061V1.30748C11.8594 1.23161 11.8306 1.15832 11.7783 1.10128C11.7261 1.04424 11.6539 1.00735 11.5753 0.997483ZM11.2063 3.14748L10.2006 3.14811C8.79195 3.14811 8.62868 3.99561 8.62868 4.63248V6.16998C8.62868 6.25275 8.66299 6.33215 8.72409 6.39073C8.78518 6.44932 8.86807 6.48232 8.95456 6.48248H11.0744L10.8334 8.26373H8.95521C8.86861 8.26373 8.78556 8.29666 8.72432 8.35526C8.66308 8.41387 8.62868 8.49335 8.62868 8.57623V13.4H6.68386V8.57623C6.68386 8.49335 6.64946 8.41387 6.58823 8.35526C6.52699 8.29666 6.44394 8.26373 6.35733 8.26373H4.51309V6.48248H6.35733C6.44394 6.48248 6.52699 6.44956 6.58823 6.39095C6.64946 6.33235 6.68386 6.25286 6.68386 6.16998V4.39373C6.68386 2.59748 7.77121 1.52498 9.59195 1.52498C10.2509 1.52498 10.8458 1.55936 11.2063 1.58936V3.14748Z" fill="#D6EFD8"/>
+                        </svg>    
+                    </a>
+    
+                    <a href="#">
+                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1569_1375)">
+                                <path d="M5.49062 5.88955C4.98381 5.88955 4.48838 6.03984 4.06698 6.32141C3.64558 6.60298 3.31713 7.00319 3.12318 7.47142C2.92923 7.93966 2.87849 8.45489 2.97736 8.95197C3.07624 9.44905 3.32029 9.90564 3.67866 10.264C4.03704 10.6224 4.49363 10.8664 4.99071 10.9653C5.48778 11.0642 6.00302 11.0134 6.47125 10.8195C6.93949 10.6255 7.33969 10.2971 7.62127 9.8757C7.90284 9.4543 8.05312 8.95887 8.05312 8.45205C8.05395 8.11531 7.98823 7.78172 7.85975 7.47045C7.73126 7.15918 7.54254 6.87637 7.30442 6.63825C7.06631 6.40014 6.78349 6.21142 6.47223 6.08293C6.16096 5.95445 5.82737 5.88873 5.49062 5.88955ZM5.49062 10.1208C5.16058 10.1208 4.83794 10.0229 4.56352 9.83957C4.28909 9.6562 4.0752 9.39558 3.9489 9.09065C3.8226 8.78573 3.78955 8.4502 3.85394 8.12649C3.91833 7.80279 4.07726 7.50545 4.31064 7.27207C4.54402 7.03869 4.84136 6.87975 5.16507 6.81537C5.48877 6.75098 5.8243 6.78402 6.12923 6.91033C6.43415 7.03663 6.69478 7.25052 6.87814 7.52494C7.0615 7.79937 7.15937 8.122 7.15937 8.45205C7.15937 8.89463 6.98356 9.31908 6.67061 9.63203C6.35766 9.94499 5.93321 10.1208 5.49062 10.1208ZM8.75937 5.7833C8.75937 5.90691 8.72272 6.02775 8.65404 6.13053C8.58537 6.23331 8.48776 6.31342 8.37355 6.36073C8.25935 6.40803 8.13368 6.42041 8.01244 6.39629C7.89121 6.37218 7.77984 6.31265 7.69243 6.22524C7.60503 6.13784 7.5455 6.02647 7.52138 5.90523C7.49727 5.78399 7.50965 5.65833 7.55695 5.54412C7.60426 5.42992 7.68436 5.33231 7.78714 5.26363C7.88992 5.19496 8.01076 5.1583 8.13437 5.1583C8.30013 5.1583 8.45911 5.22415 8.57632 5.34136C8.69353 5.45857 8.75937 5.61754 8.75937 5.7833ZM10.4531 6.4083C10.472 5.6312 10.1821 4.8783 9.64687 4.31455C9.36924 4.04617 9.0414 3.83516 8.68214 3.6936C8.32287 3.55204 7.93922 3.4827 7.55312 3.48955C6.74062 3.45205 4.24062 3.45205 3.42812 3.48955C2.65138 3.47273 1.89923 3.76236 1.33437 4.2958C0.799183 4.85955 0.509261 5.61245 0.528125 6.38955C0.490625 7.20205 0.490625 9.70205 0.528125 10.5146C0.509261 11.2917 0.799183 12.0446 1.33437 12.6083C1.89923 13.1417 2.65138 13.4314 3.42812 13.4146C4.25312 13.4646 6.72813 13.4646 7.55312 13.4146C8.33023 13.4334 9.08313 13.1435 9.64687 12.6083C10.1821 12.0446 10.472 11.2917 10.4531 10.5146C10.4906 9.70205 10.4906 7.20205 10.4531 6.38955V6.4083ZM9.39062 11.4083C9.30577 11.6233 9.17766 11.8185 9.01424 11.9819C8.85083 12.1453 8.65559 12.2734 8.44062 12.3583C7.47037 12.5545 6.47848 12.6217 5.49062 12.5583C4.50485 12.6212 3.51509 12.5539 2.54688 12.3583C2.33191 12.2734 2.13667 12.1453 1.97326 11.9819C1.80984 11.8185 1.68173 11.6233 1.59687 11.4083C1.33438 10.7458 1.39063 9.1833 1.39063 8.4583C1.39063 7.7333 1.33438 6.16455 1.59687 5.5083C1.67934 5.29122 1.80653 5.0939 1.9702 4.92916C2.13386 4.76442 2.33034 4.63594 2.54688 4.55205C3.51509 4.35644 4.50485 4.28919 5.49062 4.35205C6.47848 4.28864 7.47037 4.35589 8.44062 4.55205C8.65559 4.63691 8.85083 4.76502 9.01424 4.92843C9.17766 5.09185 9.30577 5.28709 9.39062 5.50205C9.65312 6.16455 9.59062 7.72705 9.59062 8.45205C9.59062 9.17705 9.65312 10.7458 9.39062 11.4021V11.4083Z" fill="#D6EFD8"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1569_1375">
+                                    <rect width="15" height="15" fill="white" transform="translate(0.5)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+    
+                    <a href="#">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1569_1381)">
+                                <path d="M2.30762 13.6777C3.41074 14.3159 4.69137 14.6152 6.05762 14.6152C10.1076 14.6152 13.4089 11.4046 13.5526 7.38898L14.8076 4.92773L12.7114 5.24023C12.2546 4.83744 11.6666 4.6152 11.0576 4.61523C9.45012 4.61523 8.24512 6.18836 8.63262 7.72773C6.41262 7.87148 4.40074 6.50336 3.23699 4.68086C2.46449 7.30398 3.18074 10.4627 5.12012 12.4096C5.12012 13.1446 3.24512 13.5834 2.30762 13.6777Z" stroke="#D6EFD8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1569_1381">
+                                    <rect width="15" height="15" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+<div class="pop-up" id="save-popup">
+    <div class="inner">
+        <p id="sure-save">Do you want to save changes?</p>
+        <br><br><input id="yes" type="button" value="Yes">
+        <br><br><input onclick="hide()" id="no" type="button" value="No">
+    </div>
+
+</div>
+
+<script>
+
+    function pop(){
+    
+        document.getElementById("save-popup").style.display = "block";
+    
+    };
+    
+    function hide(){
+    
+    
+        document.getElementById("save-popup").style.display = "none";
+    };
+    
+    
+    </script>
+</body>
+</html>

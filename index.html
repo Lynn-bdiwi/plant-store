@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="logout.js"></script>
+    
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
+    body {
+        margin: 0;
+        background: linear-gradient(108.81deg, #7C8761 -21.51%, #80AF81 36.42%, rgba(26, 83, 25, 0.9) 87.8%);
+        height: 100vh;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        padding-right: 30px;
+        margin-bottom: 30px;
+    }
+    #logo{
+        font-family: Pristina;
+        margin-left: 30px;
+        width: 96px;
+        height: 72px;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 71.81px;
+        color: white;
+    }
+    .list-element{
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: left;
+        background: #FFFFFF8F;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: auto;
+    }
+    .nav-links li {
+        margin: 0px 15px;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+    }
+    .icons {
+        display: flex;
+        align-items: center;
+    }
+    .icon {
+        fill: #FFFFFF8F;
+        width: 24px;
+        height: auto;
+        margin-right: 15px;
+    }
+    .dropdown {
+        margin-right: auto;
+    }
+    .dark-mode-icon {
+        fill: #FFFFFF8F;
+        width: 24px;
+        height: auto;
+        margin-right: auto;
+    }
+    .logout-button {
+        width: 85px;
+        height: 42px;
+        padding: 0px 10px 0px 10px;
+        gap: 0px;
+        border-radius: 45px;
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+        cursor: pointer;
+        background: #7C8761AB;
+        border: 1px solid #FCFCFC;
+        color:#FFFFFF8F;
+    }
+    .bobutton{
+        padding: 10px;
+        margin: 3px;
+        background-color: transparent;
+        border: none;
+        color:#FFFFFF8F;
+    }
+    .bobutton:hover{
+        background: #7C8761AB;
+    }
+    .bobutton:focus{
+        background: #7C8761AB;
+    }
+    .dropdown-menu{
+        background: #7C8761AB;
+    }
+    .dropdown-menu a{
+        text-decoration: none;
+        padding: 15px;
+        color: black;
+    }
+    .dropdown-menu li{
+        padding: 5px;
+    }
+    .dropdown-menu li:hover{
+        background-color: hwb(0 91% 7% / 0.585);
+    }
+    #about-us{
+        width: 90%;
+        max-width: 1286px;
+        height: auto;
+        min-height: 603px;
+        position: relative;
+        margin: 50px auto;
+    }
+    #about-header, #about-par {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 20px auto;
+    }
+    #about-header{
+        height: 51px;
+        font-family: Poppins;
+        font-size: 34px;
+        line-height: 51px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    #about-par{
+        width: 90%;
+        max-width: 707px;
+        height: 30px;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-top: 70px;
+    }
+    .about-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        top: 60px;
+    }
+    .about-card {
+        box-shadow: 0px 3px 7.5px 1px #d6efd8b1;
+        border: 1px solid #1A5319;
+        background-color: white;
+        border-radius: 20px;
+        margin: 15px;
+        padding: 55px;
+        text-align: center;
+        flex: 1 1 calc(30% - 30px);
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-card .about-card-icon {
+        width: 100%;
+        height: auto;
+        max-width: 73px;
+        max-height: 72px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-card .about-card-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+    .about-card h3 {
+        margin-bottom: 10px;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        background: rgba(214, 239, 216, 1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: none;
+    }
+    .about-card p {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: center;
+        background: rgba(214, 239, 216, 1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    @media (max-width: 1077px) {
+        #above-services {
+            display: none;
+        }
+    }    
+    @media (max-width: 768px) {
+        .about-card {
+            flex: 1 1 calc(50% - 30px);
+            width: 100%;
+            margin: 15px 0;
+        }        
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        .icons, .dropdown, .dark-mode-icon, .logout-button {
+            margin-top: 10px;
+        }
+        .about-card .about-card-icon {
+            max-width: 60px;
+            max-height: 60px;
+        }
+        .about-cards-container {
+            flex-direction: column;
+        }
+        #limited-offer {
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        #col-1-limited-offer, #col-2-limited-offer {
+            width: 100%;
+            margin-left: 0;
+        }
+        .form-section {
+            padding: 70px;
+        }   
+        .footer-column {
+            flex-basis: 50%;
+        }
+        .pricing-item {
+            width: calc(50% - 20px);
+        }
+        #under-limited{
+            display: none;
+        }
+        .home-container {
+            flex-direction: column;
+        }
+        .home-column {
+            width: 100%;
+        }
+        .column-content .row {
+            flex-direction: column;
+        }
+        .div-section {
+            border-right: none;
+            border-bottom: 1px solid #1A5319;
+            padding: 15px 0;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .download-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        #under-home{
+            display: none;
+        }
+        .download-btn {
+            max-width: 100%;
+        }
+        .image-column{
+            display: none;
+        }
+    }
+    @media (max-width: 480px) {
+        .about-card {
+            flex: 1 1 100%
+        }
+        .nav-links {
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-links li {
+            margin: 10px 0;
+        }
+        .about-card .about-card-icon {
+            max-width: 50px;
+            max-height: 50px;
+        }
+        #limited-offer {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        #col-1-limited-offer img {
+            width: 100%;
+            max-width: 300px;
+        }
+        #col-2-limited-offer {
+            margin-left: 0;
+            padding: 20px;
+        }
+        #col-2-limited-offer h2 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        #col-2-limited-offer p {
+            font-size: 24px;
+            line-height: 36px;
+        }
+        #col-2-limited-offer a {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .photo-section {
+            display: none;
+        }
+        .footer-column {
+            flex-basis: 100%;    
+        }
+        .pricing-item {
+            width: 100%;
+        }
+        .download-btn {
+            font-size: 12px;
+            padding: 8px 15px;
+        }
+        .download-btn svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    #limited-offer{
+        width: 90%;
+        max-width: 1286px;
+        height: auto;
+        min-height: 603px;
+        position: relative;
+        margin: 50px auto;
+        display: flex; 
+        align-items: center; 
+        gap: 20px;
+    }
+    #col-1-limited-offer{
+        flex: 1;
+    }
+    #col-1-limited-offer img{
+        max-width: 100%; 
+        height: auto;
+    }
+    #col-2-limited-offer{
+        flex: 1;
+        margin-left: 30px;
+    }
+    #col-2-limited-offer h2{
+        width: 162px;
+        height: 36px;
+        top: 64px;
+        left: 766px;
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        text-align: left;
+        background: #FFFFFFAD;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+    }
+    #col-2-limited-offer p{
+        font-family: Poppins;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 54px;
+        text-align: left;
+        background: #FFFFFF;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+    }
+    #col-2-limited-offer a{
+        text-decoration: none;
+        background: #FFFFFF;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: lowercase;
+        font-weight: 700;
+        position: relative;
+        left: 10%;
+    }
+    #under-limited{
+        background: linear-gradient(277.56deg, rgba(214, 239, 216, 0.4484) -4.64%, rgba(80, 141, 78, 0.59) 35.32%);
+        width: 100%;
+        height: 347px;
+        z-index: -1;
+        margin-top: -525px;
+    }
+    #above-services{
+        background: linear-gradient(87.37deg, #7C8761 -8.62%, rgba(214, 239, 216, 0.5) 112.88%);
+        width: 100%;
+        height: 347px;
+        position: absolute;
+        bottom: -252%;
+        left: 0;
+        z-index: -1;
+    }
+    #services{
+        top: 25%;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 347px; 
+    }
+    #services-header{
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 20px auto;
+        height: 51px;
+        font-family: Poppins;
+        font-size: 34px;
+        line-height: 51px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    .services-card-container {
+        position: relative;
+        z-index: 2; 
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: center;
+        margin-top: 110px;   
+    }
+    .services-card {
+        background: linear-gradient(87.37deg, #7C8761 -8.62%, rgba(214, 239, 216, 0.5) 112.88%);
+        border-radius: 55px;
+        overflow: hidden;
+        position: relative;
+        margin: 5px;
+        height: auto;
+    }
+    .odd{
+        top: 30%;
+    }
+    .services-card img {
+        width: 100%;
+    }
+    .services-description {
+        padding: 20px;
+        text-transform: uppercase;
+        font-family: Poppins;
+        font-size: 10px;
+        line-height: 30px;
+        text-align: center;
+        background: #1A5319;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-bottom: 40px;
+    }
+    .services-arrow {
+        position: absolute;
+        bottom: 30px;
+        right: 18px;
+        width: 30px;
+        height: 24px;
+    }
+    .services-arrow svg {
+        width: 100%;
+        height: auto;
+    }
+    .carousel {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 190px;
+    }
+    #products-header{
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 20px auto;
+        height: 51px;
+        font-family: Poppins;
+        font-size: 34px;
+        line-height: 51px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    .carousel-inner {
+        width: 300%; 
+        margin-top: 100px;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .slide {
+        flex: 0 0  33.333%;
+        width: 33.333%;
+    }
+    .pricing-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .pricing-item {
+        flex: 0 0 auto;
+        max-width: 262px;
+    }
+    .pricing-card {
+        background: #D6EFD8C2;
+        border-radius: 200px 200px 0 0;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 325px;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .pricing-card img {
+        width: 100%;
+        height: auto;
+        object-fit:cover;
+    }
+    .see-more {
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #D6EFD8C2;
+        color: #133d13;
+        padding: 5px 10px;
+        border-radius: 4px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        height: 50px;
+        font-family: Poppins;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+    }
+    .pricing-info {
+        padding: 10px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    .pricing-info h3 {
+        margin-bottom: 5px;
+        font-family: Poppins;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 39px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .pricing-info .price {
+        font-weight: bold;
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .pricing-info svg {
+        width: 34px;
+        height: 34px;
+        cursor: pointer;
+        background-color: #D9D9D9;
+        padding: 5px 9px 5px 5px;
+        border-radius: 30px;
+        vertical-align: middle;
+    }
+    .carousel-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .carousel-nav .nav-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #D6EFD8;
+        margin: 0 5px;
+        margin-top: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .carousel-nav .nav-dot.active {
+        background-color: #1A5319;   
+    }
+    #contact{
+        width: 100%;
+        max-width: 960px;
+        margin: 14% auto 0;
+        height: 572px;
+    }
+    .contact-container {
+        display: flex;
+        max-width: 100%;
+        margin: 0 auto;
+        background: #D6EFD83B;
+        border-radius: 50px;
+        width: 90%;
+        margin-top: 70px;
+        height: 85%;
+    }
+    #contact-header{
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 20px auto;
+        height: 51px;
+        font-family: Poppins;
+        font-size: 34px;
+        line-height: 51px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: underline;  
+    }
+    .form-section {
+        flex: 1;
+        padding: 20px;
+    }
+    #contact-form-header {
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 54px;
+        text-align: center;
+        background: linear-gradient(180.92deg, #508D4E -13.8%, #161313 154.8%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .form-row {
+        margin-bottom: 20px;
+    }
+    .form-row input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #1A5319;
+        background-color: #D6EFD8;
+        -webkit-background-clip: text;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        margin-bottom: 20px;
+        outline: none;
+    }
+    .form-row button {
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        max-width: 383px;
+        margin: 0 auto;
+        display: block;
+        padding: 8px 0px 13px 0px;
+        border-radius: 45px;
+        border: 1px;
+        background: #7C8761AB;
+        border: 1px solid #FCFCFC;
+        color: #ffffff;
+        font-size: 18px;
+        height: 50px;
+    }
+    .photo-section {
+        flex: 1;
+    }
+    .photo-section img {
+        width: 100%;
+        height: 100%;
+        max-height: 500px;
+        object-fit:fill;
+    }
+    ::placeholder {
+        color: white;
+    }
+    ::-webkit-input-placeholder {
+        color: white;
+    }
+    ::-moz-placeholder {
+        color: white;
+    }
+    :-ms-input-placeholder {
+        color: white;
+    }
+    :-moz-placeholder {
+        color: white;
+    }
+    .footer {
+        background: linear-gradient(87.24deg, rgba(124, 135, 97, 0.5) 0.78%, rgba(26, 83, 25, 0.5) 92.44%);
+        padding: 70px 20px 50px;
+        color: white;
+        margin-top: 200px;
+    }
+    #footer-logo{
+        font-family: Pristina;
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 71px;
+        text-align: left;
+        background: #FFFFFF;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        max-width: 150px;
+        margin-bottom: 30px;
+    }
+    #footer-par{
+        font-family: Poppins;
+        width: 300px;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 24px;
+        background: #FFFFFF;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+    }
+    .footer-header {
+        font-family: Poppins;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 39px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    .footer-links a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 8px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: center;
+    }
+    .footer-contact{
+        text-align: center;
+    }
+    .footer-contact svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .footer-social{
+        text-align: center;
+    }
+    .footer-social a{
+        text-decoration: none;
+    }
+    .footer-social svg {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid white;
+        border-radius: 50px;
+    }
+    .home-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        z-index: 1;
+        position: relative;
+    }
+    .home-column {
+        flex: 1;
+        padding: 20px;
+    }
+    .home-column .column-content {
+        max-width: 500px;
+    }
+    .column-content h2 {
+        margin-bottom: 15px;
+        font-family: Poppins;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 39px;
+        text-align: left;
+        color: #FFFFFF;
+
+    }
+    .column-content p {
+        margin-bottom: 20px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+    #home-title{
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        border: none;
+        border-left: 3px solid #1A5319;
+        padding-left: 7px;
+    }
+    .home-btn {
+        display: inline-block;
+        font-family: Poppins;
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        width: 200px;
+        height: 33px;
+        padding: 3px 61px 4px 54px;
+        border-radius: 45px;
+        border: 1px ;
+        background: #7C8761AB;
+        border: 1px solid #FCFCFC;
+    }
+    .column-content .row {
+        display: flex;
+        margin-top: 30px;
+    }
+    .div-section {
+        flex: 1;
+        margin-top: 25px;
+        padding: 0;
+        padding-left: 6px;
+        border-right: 1px solid #1A5319;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: center;
+        color: #D6EFD8;
+    }
+    .section:last-child {
+        border-right: none;
+    }
+    .image-column img {
+        width: 100%;
+        height: auto;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+    .download-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .download-btn {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 10px;
+        background: transparent;
+        border: 2px solid #1A5319;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 300px;
+        text-decoration: none;
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        text-align: center;
+    }
+    .download-btn .text-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .download-btn .text-column span {
+        display: block;
+    }
+    .download-btn .text-column b {
+        font-weight: 600;
+    }
+    #under-home{
+        background: #1A531933;
+        width: 70%;
+        height: 672px;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left:0;
+        border-radius: 0 0 25px 0;
+    }
+
+    .pop-up {
+            display: none;
+            position: absolute;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 449px;
+            height: 300px;
+            gap: 0px;
+            opacity: 0px;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 20px;
+            left: 40%;
+            top:30%;
+            background-color: rgba(256, 256, 256, 0.7);
+            backdrop-filter: blur(5px);
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }  
+
+        .inner p{
+            position: relative;
+            width: 100%;
+            height: 90px;
+            padding-top: 25px;
+            padding-bottom: 0;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: center;
+            background: #80AF81;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+         #yes{
+            clear: both;
+            font-size: 18px;
+            width: 276px;
+            height: 50px;
+            margin-top: 0;
+            padding: 10px 0px 10px 0px;
+            gap: 0px;
+            border-radius: 45px;
+            border: 1px;
+            opacity: 0px;
+            background: #7C8761AB;
+            color: white;
+            border: 1px solid #FCFCFC;
+        }
+   #yes:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+     #no{
+            font-family: Poppins;
+            font-size: 18px;
+            width: 276px;
+            height: 50px;
+            margin-top: 0;
+            padding: 10px 0px 10px 0px;
+            gap: 0px;
+            border-radius: 45px;
+            border: 1px;
+            text-align: center;
+            background: #FCFCFC;
+            clear: both;
+            color: #7C8761AB;
+            border: 1px solid #7C8761AB;
+
+        }
+         #no:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo" id="logo">logo</div>
+    <ul class="nav-links">
+        <li class="list-element"><a href="#">Home</a></li>
+        <li class="list-element"><a href="#">About Us</a></li>
+        <li class="list-element"><a href="#">Products</a></li>
+        <li class="list-element"><a href="#">Services</a></li>
+        <li class="list-element"><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="icons">
+        <svg class="list-element icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <svg class="list-element icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg class="list-element icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+    </div>
+    <div class="dropdown" id="dropdown">
+        <a id="bobutton" class="bobutton btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+
+        <ul class="dropdown-menu">
+        <li class="list-element"><a href="#en" data-reload>English</a></li>
+        <li class="list-element"><a href="#ar" data-reload>Arabic</a></li>
+        </ul>
+    </div>
+    <svg class="list-element dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+    <button onclick="logout()" class=" logout-button">Logout</button>
+</nav>
+
+<div id="under-home"></div>
+<div class="home-container">
+    <div class="home-column">
+        <div class="column-content">
+            <p id="home-title">arteficilal flowers</p>
+            <h2>unique flowers delivered to your dooretep </h2>
+            <p>owalos provide artificial handmade flowers to make your home beautiful </p>
+            <a href="#" class="home-btn">shop now</a>
+            <div class="row">
+                <div class="div-section">
+                    <p>10 M <br>
+                        product sold</p>
+                </div>
+                <div class="div-section">
+                    <p>260 K <br>
+                        send gifts last year</p>
+                </div>
+                <div class="div-section">
+                    <p>95 % <br>
+                        happy customers</p>
+                </div>
+            </div>
+
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.1617 33.5958C26.9002 35.4427 24.4311 35.1511 22.0542 34.2762C19.5389 33.3819 17.2313 33.343 14.5775 34.2762C11.2545 35.4816 9.50069 35.1317 7.51613 33.5958C-3.7451 23.8164 -2.08361 8.92387 10.7007 8.3795C13.816 8.51559 15.9851 9.8182 17.8082 9.93486C20.5312 9.46825 23.1388 8.12675 26.0464 8.30173C29.5309 8.53503 32.1616 9.70155 33.8923 11.8013C26.6925 15.4369 28.4002 23.4276 35 25.6634C33.6847 28.5797 31.977 31.4766 29.1386 33.6152L29.1617 33.5958ZM17.5774 8.26285C17.2313 3.92728 21.4081 0.349956 26.2079 0C26.8771 5.01603 20.8081 8.7489 17.5774 8.26285Z" fill="white"/>
+                    </svg>
+                    <div class="text-column">
+                        <span>available on the</span>
+                        <b>App Store</b>
+                    </div>
+                </a> 
+            
+                <a href="#" class="download-btn">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_660_107)">
+                            <path d="M18.6801 19.0695L0.165527 36.6165C0.373444 37.283 0.747076 37.8977 1.25786 38.4136C1.76865 38.9295 2.40307 39.3329 3.11262 39.593C3.82217 39.8531 4.58807 39.963 5.35178 39.9143C6.11548 39.8656 6.85676 39.6596 7.51896 39.312L28.3513 28.5793L18.6801 19.0695Z" fill="#EA4335"/>
+                            <path d="M37.4016 16.0868L28.393 11.4191L18.2527 19.4685L28.4342 28.5541L37.3742 23.9364C38.1662 23.5612 38.8296 22.9972 39.2924 22.3053C39.7553 21.6135 40 20.8202 40 20.0115C40 19.2028 39.7553 18.4096 39.2924 17.7177C38.8296 17.0258 38.1662 16.4618 37.3742 16.0866L37.4016 16.0868Z" fill="#FBBC04"/>
+                            <path d="M0.165429 3.3197C0.0535844 3.69397 -0.00212299 4.08014 -0.000195802 4.46783V35.4681C0.000908585 35.8557 0.0565645 36.2415 0.165429 36.6164L19.3146 19.5187L0.165429 3.3197Z" fill="#4285F4"/>
+                            <path d="M18.818 19.9681L28.3927 11.4192L7.58803 0.636475C6.80526 0.221804 5.91499 0.00219444 5.00787 8.6686e-06C2.75678 -0.00394893 0.777715 1.34757 0.165527 3.30729L18.818 19.9681Z" fill="#34A853"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_660_107">
+                                <rect width="40" height="40" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="text-column">
+                        <span>GET IT ON</span>
+                        <b>Google Play</b>
+                    </div>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="home-column image-column">
+        <img src="Group 20.png" alt="Placeholder Image">
+    </div>
+</div>
+
+<div id="about-us">
+    <h1 id="about-header">about us</h1>
+    <p id="about-par">this site for those who admire the beauty and harmony of nature</p>
+    <div class="about-cards-container">
+
+        <div class="about-card">
+            <div class="about-card-icon">
+                <svg width="73" height="70" viewBox="0 0 73 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M36.5 69.9999V32.6666M36.5 34.9999V48.9999M36.5 34.9999C36.5 30.0492 34.4491 25.3013 30.7984 21.8006C27.1477 18.2999 22.1962 16.3333 17.0334 16.3333H2.43335V30.3333C2.43335 35.284 4.4843 40.0319 8.13501 43.5326C11.7857 47.0333 16.7371 48.9999 21.9 48.9999H36.5M36.5 34.9999H51.1C56.2629 34.9999 61.2143 33.0333 64.865 29.5326C68.5157 26.0319 70.5667 21.284 70.5667 16.3333V2.33325H55.9667C50.8038 2.33325 45.8524 4.29991 42.2017 7.80059C38.551 11.3013 36.5 16.0492 36.5 20.9999V34.9999ZM36.5 34.9999L55.9667 16.3333M36.5 48.9999L17.0334 30.3333" stroke="#D6EFD8"/>
+                </svg>    
+            </div>
+            <h3 class="about-card-header">large assortment</h3>
+            <p class="about-card-desc">we offer our customers more than 15.000 items of natural and artiificial flower, tress and many accessories for floristry </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-card-icon">
+                <svg width="75" height="72" viewBox="0 0 75 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M70.35 20.25L55.75 27.25M55.75 27.25L53.925 28.125L37.5 36M55.75 27.25V39.5M55.75 27.25L21.075 9.75M37.5 36L4.65 20.25M37.5 36V69.25M50.5597 5.837L57.8597 9.512C65.7108 13.4635 69.6383 15.4375 71.821 18.99C74 22.539 74 26.9595 74 35.797V36.2065C74 45.0405 74 49.461 71.821 53.01C69.6383 56.5625 65.7108 58.54 57.8597 62.4915L50.5597 66.163C44.1503 69.3865 40.9456 71 37.5 71C34.0544 71 30.8497 69.39 24.4403 66.163L17.1403 62.488C9.28915 58.5365 5.36175 56.5625 3.17905 53.01C1 49.461 1 45.0405 1 36.21V35.8005C1 26.963 1 22.5425 3.17905 18.9935C5.36175 15.441 9.28915 13.4635 17.1403 9.5155L24.4403 5.8405C30.8497 2.6135 34.0544 1 37.5 1C40.9456 1 44.1503 2.61 50.5597 5.837Z" stroke="#D6EFD8" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>    
+            </div>
+            <h3 class="about-card-header">free&fast shipping</h3>
+            <p class="about-card-desc">we will ship your goods after receipt of founds to the current a ccount, choose the most convenient from the offerd delivery option</p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-card-icon">
+                <svg width="73" height="70" viewBox="0 0 73 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_649_93)">
+                        <path d="M42.2431 12.8517C42.3189 12.5717 42.5073 12.332 42.7671 12.1849C43.0268 12.0379 43.3367 11.9954 43.6289 12.0669C47.6672 13.0755 51.3516 15.099 54.3021 17.9287C57.2525 20.7584 59.3621 24.2917 60.4132 28.1642C60.4907 28.4441 60.4493 28.7421 60.298 28.9927C60.1467 29.2434 59.898 29.4263 59.6062 29.5013C59.5135 29.5265 59.4175 29.5394 59.3211 29.5396C59.0688 29.5388 58.824 29.4578 58.6248 29.3094C58.4257 29.161 58.2834 28.9534 58.2204 28.7193C57.2689 25.2224 55.3624 22.0319 52.6975 19.4765C50.0325 16.9211 46.7054 15.093 43.0586 14.1806C42.7672 14.1073 42.5179 13.9264 42.3651 13.6774C42.2123 13.4284 42.1684 13.1316 42.2431 12.8517ZM40.7774 22.9306C45.0547 24.0325 47.9376 26.797 49.0868 30.8985C49.1499 31.1327 49.2921 31.3403 49.4913 31.4887C49.6904 31.6371 49.9353 31.7181 50.1875 31.7189C50.284 31.7187 50.3799 31.7058 50.4727 31.6806C50.7644 31.6056 51.0132 31.4227 51.1645 31.172C51.3158 30.9213 51.3572 30.6234 51.2797 30.3435C49.9109 25.4216 46.4748 22.1403 41.3477 20.8169C41.0627 20.7641 40.7675 20.8174 40.5221 20.966C40.2767 21.1146 40.0996 21.3474 40.0269 21.6168C39.9542 21.8862 39.9913 22.1721 40.1308 22.4162C40.2702 22.6603 40.5014 22.8443 40.7774 22.9306ZM62.7173 49.9243C62.244 53.3668 60.4795 56.5261 57.7537 58.8118C55.0279 61.0975 51.5273 62.3531 47.9063 62.3439C25.8922 62.3439 7.98441 45.172 7.98441 24.0626C7.9769 20.5918 9.28725 17.2371 11.6707 14.625C14.0542 12.0129 17.3477 10.3222 20.9362 9.86847C21.6714 9.78277 22.4157 9.92808 23.0574 10.2826C23.6991 10.6371 24.2035 11.1816 24.495 11.8345L30.5118 24.7243C30.7367 25.2241 30.8283 25.7698 30.7786 26.312C30.7288 26.8543 30.5391 27.3761 30.2266 27.8306C30.2009 27.8661 30.1753 27.9017 30.1468 27.9345L24.1014 34.8278C24.0066 34.9789 23.9522 35.1501 23.9433 35.3261C23.9343 35.5022 23.971 35.6777 24.0501 35.8368C26.2857 40.2255 31.0792 44.7864 35.7102 46.9302C35.8774 47.0046 36.0611 47.0382 36.2452 47.0282C36.4292 47.0182 36.6079 46.9648 36.7652 46.8728L43.8571 41.0978L43.9654 41.0185C44.44 40.7179 44.9853 40.5355 45.5518 40.4877C46.1184 40.44 46.6885 40.5284 47.2105 40.745L60.6756 46.531C61.3496 46.8122 61.9113 47.294 62.2775 47.9052C62.6437 48.5163 62.7949 49.2243 62.7087 49.9243H62.7173ZM59.7659 48.5243L46.2952 42.7384C46.1315 42.6725 45.9539 42.6449 45.7769 42.6577C45.5999 42.6705 45.4286 42.7235 45.2771 42.8122L38.211 48.5872L38.1055 48.6638C37.6142 48.9783 37.0463 49.1656 36.4571 49.2073C35.868 49.249 35.2776 49.1437 34.7435 48.9017C29.6107 46.5255 24.5035 41.6611 22.0255 36.7966C21.7706 36.2883 21.6567 35.7257 21.6947 35.1629C21.7326 34.6001 21.9212 34.0562 22.2422 33.5837C22.2679 33.5454 22.2964 33.5126 22.3249 33.4771L28.3674 26.5864C28.4579 26.4388 28.5111 26.2727 28.5225 26.1017C28.5339 25.9308 28.5032 25.7596 28.433 25.6021L22.4048 12.7122C22.3198 12.5124 22.1751 12.3411 21.9889 12.22C21.8027 12.0988 21.5833 12.0332 21.3582 12.0314C21.3127 12.0287 21.2669 12.0287 21.2214 12.0314C18.1823 12.4175 15.394 13.8518 13.3776 16.0661C11.3613 18.2803 10.255 21.123 10.2657 24.0626C10.2657 43.9634 27.1526 60.1564 47.9063 60.1564C50.9719 60.1665 53.9364 59.1057 56.2455 57.1723C58.5547 55.2388 60.0505 52.565 60.4532 49.6509C60.4794 49.4163 60.4259 49.1798 60.3005 48.9767C60.1751 48.7737 59.9846 48.615 59.7574 48.5243H59.7659Z" fill="#D6EFD8"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_649_93">
+                            <rect width="73" height="70" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>            
+            </div>
+            <h3 class="about-card-header">24/7 support</h3>
+            <p class="about-card-desc">we work seven days a week  and a lunch break,we willbe glad to welcome you as our class="card-header" buyer and thank you for your trust in ue  </p>
+        </div>
+
+
+     
+    </div>
+
+
+    
+</div>
+
+<div id="limited-offer">
+    <div id="col-1-limited-offer">
+        <img src="Rectangle 61.png">
+    </div>
+    <div id="col-2-limited-offer" >
+        <h2>limited offer</h2>
+        <p>35% off only this fraiday and git special gift </p>
+        <a href="offer.html">grab it now
+            <svg width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28.7071 8.70711C29.0976 8.31658 29.0976 7.68342 28.7071 7.29289L22.3431 0.928932C21.9526 0.538408 21.3195 0.538408 20.9289 0.928932C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM0 9H28V7H0V9Z" fill="white"/>
+            </svg>
+                
+        </a>
+    </div>
+</div>
+
+<div id="under-limited">
+</div>
+
+<div id="above-services">
+</div>
+
+<div id="services">
+    <h1 id="services-header">our services</h1>
+    <div class="services-card-container">
+        <div class="services-card">
+            <img src="Frame 41.png">
+            <div class="services-description">
+                <h3>Selling flower bouquets</h3>
+            </div>
+            <div class="services-arrow">
+                <svg width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.7071 8.70711C29.0976 8.31658 29.0976 7.68342 28.7071 7.29289L22.3431 0.928932C21.9526 0.538408 21.3195 0.538408 20.9289 0.928932C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM0 9H28V7H0V9Z" fill="#7C8761"/>
+                </svg>                    
+            </div>
+        </div>
+
+        <div class="services-card odd">
+            <img src="Frame 39.png">
+            <div class="services-description">
+                <h3>Selling houseplants</h3>
+            </div>
+            <div class="services-arrow">
+                <svg width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.7071 8.70711C29.0976 8.31658 29.0976 7.68342 28.7071 7.29289L22.3431 0.928932C21.9526 0.538408 21.3195 0.538408 20.9289 0.928932C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM0 9H28V7H0V9Z" fill="#7C8761"/>
+                </svg>    
+            </div>
+        </div>
+
+        <div class="services-card">
+            <img src="Frame 38.png">
+            <div class="services-description">
+                <h3>Packaging service</h3>
+            </div>
+            <div class="services-arrow">
+                <svg width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.7071 8.70711C29.0976 8.31658 29.0976 7.68342 28.7071 7.29289L22.3431 0.928932C21.9526 0.538408 21.3195 0.538408 20.9289 0.928932C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM0 9H28V7H0V9Z" fill="#7C8761"/>
+                </svg>                    
+            </div>
+        </div>
+
+        <div class="services-card odd">
+            <img src="Frame 40.png">
+            <div class="services-description">
+                <h3>Delivery service</h3>
+            </div>
+            <div class="services-arrow">
+                <svg width="29" height="16" viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.7071 8.70711C29.0976 8.31658 29.0976 7.68342 28.7071 7.29289L22.3431 0.928932C21.9526 0.538408 21.3195 0.538408 20.9289 0.928932C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM0 9H28V7H0V9Z" fill="#7C8761"/>
+                </svg>                    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="carousel" id="carousel">
+    <h1 id="products-header">our products</h1>
+    <div class="carousel-inner">
+        <div class="slide">
+            <div class="pricing-container">
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 31.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Succulents</h3>
+                            <p class="price">30.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 36.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Bromeliads</h3>
+                            <p class="price">50.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 34.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Calathea</h3>
+                            <p class="price">20.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 35.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Croton</h3>
+                            <p class="price">40.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="pricing-container">
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 31.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Succulents</h3>
+                            <p class="price">30.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 36.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Bromeliads</h3>
+                            <p class="price">50.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 34.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Calathea</h3>
+                            <p class="price">20.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 35.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Croton</h3>
+                            <p class="price">40.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="pricing-container">
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 31.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Succulents</h3>
+                            <p class="price">30.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 36.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Bromeliads</h3>
+                            <p class="price">50.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 34.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Calathea</h3>
+                            <p class="price">20.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                </div>
+
+                <div class="pricing-item">
+                    <div class="pricing-card">
+                        <img src="Rectangle 35.png">
+                        <a href="#" class="see-more">see More</a>
+                    </div>
+                    <div class="pricing-info">
+                        <div>
+                            <h3>Croton</h3>
+                            <p class="price">40.00$</p>
+                        </div>
+                            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 3.51852H22L19.75 11.7037H6.25M19.75 14.2222H7L3.25 1H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.25 18C19.0784 18 19.75 17.4362 19.75 16.7407C19.75 16.0452 19.0784 15.4814 18.25 15.4814C17.4216 15.4814 16.75 16.0452 16.75 16.7407C16.75 17.4362 17.4216 18 18.25 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 18C9.32843 18 10 17.4362 10 16.7407C10 16.0452 9.32843 15.4814 8.5 15.4814C7.67157 15.4814 7 16.0452 7 16.7407C7 17.4362 7.67157 18 8.5 18Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="carousel-nav">
+    <div class="nav-dot active"></div>
+    <div class="nav-dot"></div>
+    <div class="nav-dot"></div>
+</div>
+
+<div id="contact">
+    <h1 id="contact-header">Contact us</h1>
+    <div class="contact-container">
+        <div class="form-section">
+            <h1 id="contact-form-header">Contact</h1>
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="First Name" >
+                    <input type="text" placeholder="Last Name" >
+                </div>
+                <div class="form-row">
+                    <input type="email" placeholder="Email" >
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="Message" >
+                </div>
+                <div class="form-row">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="photo-section">
+            <img src="Rectangle 33.png">
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h1 id="footer-logo">logo</h1>
+            <p id="footer-par">owalos provide artificial handmade flowers to make your home beautiful </p>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-header">Quick Links</h3>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">products</a>
+                <a href="#">about us</a>
+                <a href="#">services</a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-header">Contact Us</h3>
+            <div class="footer-contact">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    8979925
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    info@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-header">Follow Us</h3>
+            <div class="footer-social">
+                <a href="#">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.5753 0.997483C10.9165 0.930601 10.2544 0.898053 9.59195 0.899983C7.3957 0.899983 6.0308 2.23873 6.0308 4.39373V5.85686H4.18591C4.0993 5.85686 4.01625 5.88978 3.95501 5.94839C3.89378 6.00699 3.85938 6.08648 3.85938 6.16936V8.57561C3.85938 8.65849 3.89378 8.73797 3.95501 8.79658C4.01625 8.85518 4.0993 8.88811 4.18591 8.88811H6.0308V13.7131C6.0308 13.796 6.06521 13.8755 6.12644 13.9341C6.18768 13.9927 6.27073 14.0256 6.35733 14.0256H8.95521C9.04181 14.0256 9.12487 13.9927 9.1861 13.9341C9.24734 13.8755 9.28174 13.796 9.28174 13.7131V8.88811H11.1208C11.2 8.88814 11.2766 8.86058 11.3362 8.81055C11.3958 8.76053 11.4344 8.69146 11.4447 8.61623L11.7693 6.20998C11.7753 6.16588 11.7714 6.12105 11.7579 6.07849C11.7444 6.03593 11.7215 5.99662 11.6909 5.96319C11.6602 5.92976 11.6225 5.90299 11.5801 5.88465C11.5378 5.86631 11.4918 5.85684 11.4453 5.85686H9.28174V4.63248C9.28174 4.02623 9.40909 3.77311 10.2013 3.77311H11.5328C11.6194 3.77311 11.7025 3.74018 11.7637 3.68158C11.825 3.62297 11.8594 3.54349 11.8594 3.46061V1.30748C11.8594 1.23161 11.8306 1.15832 11.7783 1.10128C11.7261 1.04424 11.6539 1.00735 11.5753 0.997483ZM11.2063 3.14748L10.2006 3.14811C8.79195 3.14811 8.62868 3.99561 8.62868 4.63248V6.16998C8.62868 6.25275 8.66299 6.33215 8.72409 6.39073C8.78518 6.44932 8.86807 6.48232 8.95456 6.48248H11.0744L10.8334 8.26373H8.95521C8.86861 8.26373 8.78556 8.29666 8.72432 8.35526C8.66308 8.41387 8.62868 8.49335 8.62868 8.57623V13.4H6.68386V8.57623C6.68386 8.49335 6.64946 8.41387 6.58823 8.35526C6.52699 8.29666 6.44394 8.26373 6.35733 8.26373H4.51309V6.48248H6.35733C6.44394 6.48248 6.52699 6.44956 6.58823 6.39095C6.64946 6.33235 6.68386 6.25286 6.68386 6.16998V4.39373C6.68386 2.59748 7.77121 1.52498 9.59195 1.52498C10.2509 1.52498 10.8458 1.55936 11.2063 1.58936V3.14748Z" fill="#D6EFD8"/>
+                    </svg>    
+                </a>
+
+                <a href="#">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1569_1375)">
+                            <path d="M5.49062 5.88955C4.98381 5.88955 4.48838 6.03984 4.06698 6.32141C3.64558 6.60298 3.31713 7.00319 3.12318 7.47142C2.92923 7.93966 2.87849 8.45489 2.97736 8.95197C3.07624 9.44905 3.32029 9.90564 3.67866 10.264C4.03704 10.6224 4.49363 10.8664 4.99071 10.9653C5.48778 11.0642 6.00302 11.0134 6.47125 10.8195C6.93949 10.6255 7.33969 10.2971 7.62127 9.8757C7.90284 9.4543 8.05312 8.95887 8.05312 8.45205C8.05395 8.11531 7.98823 7.78172 7.85975 7.47045C7.73126 7.15918 7.54254 6.87637 7.30442 6.63825C7.06631 6.40014 6.78349 6.21142 6.47223 6.08293C6.16096 5.95445 5.82737 5.88873 5.49062 5.88955ZM5.49062 10.1208C5.16058 10.1208 4.83794 10.0229 4.56352 9.83957C4.28909 9.6562 4.0752 9.39558 3.9489 9.09065C3.8226 8.78573 3.78955 8.4502 3.85394 8.12649C3.91833 7.80279 4.07726 7.50545 4.31064 7.27207C4.54402 7.03869 4.84136 6.87975 5.16507 6.81537C5.48877 6.75098 5.8243 6.78402 6.12923 6.91033C6.43415 7.03663 6.69478 7.25052 6.87814 7.52494C7.0615 7.79937 7.15937 8.122 7.15937 8.45205C7.15937 8.89463 6.98356 9.31908 6.67061 9.63203C6.35766 9.94499 5.93321 10.1208 5.49062 10.1208ZM8.75937 5.7833C8.75937 5.90691 8.72272 6.02775 8.65404 6.13053C8.58537 6.23331 8.48776 6.31342 8.37355 6.36073C8.25935 6.40803 8.13368 6.42041 8.01244 6.39629C7.89121 6.37218 7.77984 6.31265 7.69243 6.22524C7.60503 6.13784 7.5455 6.02647 7.52138 5.90523C7.49727 5.78399 7.50965 5.65833 7.55695 5.54412C7.60426 5.42992 7.68436 5.33231 7.78714 5.26363C7.88992 5.19496 8.01076 5.1583 8.13437 5.1583C8.30013 5.1583 8.45911 5.22415 8.57632 5.34136C8.69353 5.45857 8.75937 5.61754 8.75937 5.7833ZM10.4531 6.4083C10.472 5.6312 10.1821 4.8783 9.64687 4.31455C9.36924 4.04617 9.0414 3.83516 8.68214 3.6936C8.32287 3.55204 7.93922 3.4827 7.55312 3.48955C6.74062 3.45205 4.24062 3.45205 3.42812 3.48955C2.65138 3.47273 1.89923 3.76236 1.33437 4.2958C0.799183 4.85955 0.509261 5.61245 0.528125 6.38955C0.490625 7.20205 0.490625 9.70205 0.528125 10.5146C0.509261 11.2917 0.799183 12.0446 1.33437 12.6083C1.89923 13.1417 2.65138 13.4314 3.42812 13.4146C4.25312 13.4646 6.72813 13.4646 7.55312 13.4146C8.33023 13.4334 9.08313 13.1435 9.64687 12.6083C10.1821 12.0446 10.472 11.2917 10.4531 10.5146C10.4906 9.70205 10.4906 7.20205 10.4531 6.38955V6.4083ZM9.39062 11.4083C9.30577 11.6233 9.17766 11.8185 9.01424 11.9819C8.85083 12.1453 8.65559 12.2734 8.44062 12.3583C7.47037 12.5545 6.47848 12.6217 5.49062 12.5583C4.50485 12.6212 3.51509 12.5539 2.54688 12.3583C2.33191 12.2734 2.13667 12.1453 1.97326 11.9819C1.80984 11.8185 1.68173 11.6233 1.59687 11.4083C1.33438 10.7458 1.39063 9.1833 1.39063 8.4583C1.39063 7.7333 1.33438 6.16455 1.59687 5.5083C1.67934 5.29122 1.80653 5.0939 1.9702 4.92916C2.13386 4.76442 2.33034 4.63594 2.54688 4.55205C3.51509 4.35644 4.50485 4.28919 5.49062 4.35205C6.47848 4.28864 7.47037 4.35589 8.44062 4.55205C8.65559 4.63691 8.85083 4.76502 9.01424 4.92843C9.17766 5.09185 9.30577 5.28709 9.39062 5.50205C9.65312 6.16455 9.59062 7.72705 9.59062 8.45205C9.59062 9.17705 9.65312 10.7458 9.39062 11.4021V11.4083Z" fill="#D6EFD8"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1569_1375">
+                                <rect width="15" height="15" fill="white" transform="translate(0.5)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1569_1381)">
+                            <path d="M2.30762 13.6777C3.41074 14.3159 4.69137 14.6152 6.05762 14.6152C10.1076 14.6152 13.4089 11.4046 13.5526 7.38898L14.8076 4.92773L12.7114 5.24023C12.2546 4.83744 11.6666 4.6152 11.0576 4.61523C9.45012 4.61523 8.24512 6.18836 8.63262 7.72773C6.41262 7.87148 4.40074 6.50336 3.23699 4.68086C2.46449 7.30398 3.18074 10.4627 5.12012 12.4096C5.12012 13.1446 3.24512 13.5834 2.30762 13.6777Z" stroke="#D6EFD8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1569_1381">
+                                <rect width="15" height="15" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="pop-up" id="save-popup">
+    <div class="inner">
+        <p id="sure-save">Do you want to save changes?</p>
+        <br><br><input id="yes" type="button" value="Yes">
+        <br><br><input onclick="hide()" id="no" type="button" value="No">
+    </div>
+</div>
+
+
+<script>
+    const carousel = document.querySelector('.carousel-inner');
+    const slides = document.querySelectorAll('.slide');
+    const navDots = document.querySelectorAll('.nav-dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        carousel.style.transform = `translateX(-${index * 33.333}%)`;
+        navDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+        });
+    }
+
+    navDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        });
+    });
+
+    
+
+function pop(){
+
+    document.getElementById("save-popup").style.display = "block";
+
+};
+
+function hide(){
+
+
+    document.getElementById("save-popup").style.display = "none";
+};
+
+
+</script>
+
+</body>
+</html>

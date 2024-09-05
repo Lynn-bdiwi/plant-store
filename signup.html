@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <script src="reg.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
+        body{
+            background: linear-gradient(108.81deg, #7C8761 -21.51%, #80AF81 36.42%, rgba(26,83,25,0.9) 87.8%);
+            height: 100vh;
+            background-size: 120% 120%;
+        }
+        .logo{
+            position: relative;
+            width: 96px;
+            height: 72px;
+            top: 32px;
+            left: 156px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Pristina;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 71.81px;
+            text-align: left;
+            color: white;
+        }
+        .down-div{
+            position: relative;
+            background-image: url("1.jpg");
+            background-size: cover;
+            background-position: center;
+            color: #D9D9D9;
+            width: 472px;
+            height: 466px;
+            gap: 0px;
+            border-radius: 55px;
+            opacity: 0px;
+            position: relative;
+            z-index: -1;
+            left: -15px;
+            animation-name: down;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-out;
+        }
+        .container{
+            padding: 40px;
+            margin: 50px;
+            display: flex;
+            float: left;
+            justify-content: center;
+            align-items: center;
+        }
+        .upper-div{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 733px;
+            height: 536px;
+            left: -90px;
+            gap: 0px;
+            border-radius: 55px ;
+            border: 1px;
+            opacity: 0px;
+            background-color: #FFFFFF1A;
+            border: 1px solid #F1F1F17A;
+            backdrop-filter: blur(10px);
+            box-shadow: -47.43px 47.43px 47.43px #FFFFFF1A inset;
+            box-shadow: 47.43px -47.43px 47.43px #C2C2C21A inset; 
+            animation-name: upper;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-out;
+        }
+        @keyframes upper{
+            from{
+                transform: translateX(-70%);
+            }to{
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes down{
+            from{
+                transform: translateX(70%);
+            }to{
+                transform: translateX(0);
+            }
+        }
+
+        .signup-h1{
+            position: relative;
+            text-align: center;
+            left: 15%;
+            text-transform: uppercase;
+            width: 300px;
+            height: 54px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: "Poppins", sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 54px;
+            text-align: center;
+            background: linear-gradient(180deg, #508D4E -14.81%, #161313 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .signup{
+            position: inherit;
+            text-align: center;
+            width:426px;
+            height:443px;
+            gap: 17px;
+            top: -5%;
+            opacity: 0px;
+            display: block;
+        }
+        img{
+            width: 110px;
+            height: 134px;
+            gap: 0px;
+            opacity: 0px;
+            position: relative;
+            text-align: center;
+            left: 1%;
+        }
+        .anch{
+            position: absolute;
+            width: 330px;
+            height: 24px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            left: 12%;
+            top: 107%;
+
+        }
+        .have-account{
+            color: white;
+        }
+        .user input, .phone input{
+            -webkit-text-fill-color: transparent;
+
+        }
+        input {
+            background-color: #D6EFD8;
+            -webkit-background-clip: text;
+            position: relative;
+            width:150px;
+            height:40px;
+            gap: 220px;
+            opacity: 0px;
+            font-family: "Poppins", sans-serif;
+            color: white;
+           margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid #406e3e;
+            outline: none;
+            padding: 5px;
+            margin: 10px;
+            margin-bottom: 0;
+            transition-duration: 0.4s;
+        }
+        input:focus , input:not(:placeholder-shown){
+            padding-bottom: 10px;
+        }
+        #button{
+            position: absolute;
+            top: 85%;
+            left: 5%;
+            width: 370px;
+            height: 51px;
+            padding: 8px 0px 13px 0px;
+            gap: 0px;
+            border-radius: 45px;
+            border: 1px ;
+            opacity: 0px;
+            font-size: 18px;
+            background: #7C8761AB;
+            border: 1px solid #FCFCFC;
+            color: #ffffff;
+            transition-duration: 0.4s;
+        }
+        #button:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        #forms{
+            position: relative;
+            display: flex;
+            float: left;
+            left: 8%;
+            bottom:10px;
+            margin-bottom: 0;
+        }
+        .login{
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            color: #406e3e;
+            text-decoration: none;
+        }
+        .login:hover{
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-width: 1024px){
+        body{
+            margin: 0;
+        }
+        .logo{
+            font-size: 20px;
+        }
+        .container{
+            width:90%;
+        }
+        .upper-div{
+            width: 70%;
+            height: 60%;
+            left: 1%;
+        }
+        .signup-h1{
+            left: 1%;
+            width: 100%;
+            font-size: 30px;
+        }
+        .down-div{
+            display: none;
+        }
+        input{
+            width: 60%;
+            margin: 0;
+        }
+        #button{
+            width: 70%;
+            font-size: 16px;
+        }
+        #frame{
+            display: none;
+        }
+        #forms{
+            top: 3%;
+        }
+        #su{
+            position: relative;
+            top: 45%;
+            left: 9%;
+        }
+        .anch{
+            left: 26%;
+            top: 87%;
+        }
+
+    }
+
+    @media only screen and (max-width:580px){
+        .logo{
+            font-size: 18px;
+        }
+        .signup-h1{
+            font-size: 25px;
+        }
+        input{
+            width: 40%;
+            margin: 0;
+        }
+        #button{
+            width: 60%;
+            font-size: 16px;
+            left: 15%;
+        }
+        .phone{
+            margin-left: 0;
+        }
+        .anch{
+            width: 70%;
+            left: 17%;
+            top: 83%;
+        }
+            
+        }
+        #buttons{
+            position: relative;
+            display: flex;
+            float: left;
+            left: 60%;
+            top: -5%;
+        }
+        .bobutton{
+            background: #7C8761AB;
+            color: #ffffff;
+            border: 1px solid #FCFCFC;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 3px;
+        }
+        .dropdown-menu a{
+            text-decoration: none;
+            padding: 15px;
+        }
+        .dropdown-menu li{
+            padding: 5px;
+        }
+        .dropdown-menu li:hover{
+            background-color: hwb(0 91% 7% / 0.585);
+        }
+        #dark-button{
+            background: #7C8761AB;
+            margin: 3px;
+            color: #ffffff;
+            border: 1px solid #FCFCFC;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        #dark-button:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        #light-button{
+            background: #7C8761AB;
+            color: #ffffff;
+            border: 1px solid #FCFCFC;
+            border-radius: 10px;
+            margin: 3px;
+            padding: 10px;
+        }
+        #light-button:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        .pop-up {
+            display: none;
+            position: absolute;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 449px;
+            height: 300px;
+            gap: 0px;
+            opacity: 0px;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 20px;
+            left: 40%;
+            top:30%;
+            background-color: rgba(256, 256, 256, 0.7);
+            backdrop-filter: blur(5px);
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }  
+
+        .inner p{
+            position: relative;
+            width: 100%;
+            height: 90px;
+            padding-top: 25px;
+            padding-bottom: 0;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: center;
+            background: #80AF81;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #yes{
+            clear: both;
+            font-size: 18px;
+            width: 276px;
+            height: 50px;
+            margin-top: 0;
+            padding: 10px 0px 10px 0px;
+            gap: 0px;
+            border-radius: 45px;
+            border: 1px;
+            opacity: 0px;
+            background: #7C8761AB;
+            border: 1px solid #FCFCFC
+        }
+        #yes:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        #no{
+            height: 30px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: center;
+            background: #7C8761A1;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            clear: both;
+            border-bottom: none;
+        }
+        #no:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <h1>logo</h1>
+    </div>
+
+  
+    <div class="buttons" id="buttons">
+        <button class="dark-button" id="dark-button" onclick="funDark()">Dark</button>
+        <button class="dark-button" id="light-button" onclick="funLight()">Light</button>
+        
+        <div class="dropdown" id="dropdown">
+            <a id="bobutton" class="bobutton btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+        
+            <ul class="dropdown-menu">
+            <li><a href="#en" data-reload>English</a></li>
+            <li><a href="#ar" data-reload>Arabic</a></li>
+            <li><a href="#fr" data-reload>French</a></li>
+            <li><a href="#gr" data-reload>German</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+        <div class="down-div" id="down-div">
+        </div>
+
+        <div class="upper-div" id="upper-div">
+            <div class="signup">
+                <h1 id="signup-h1" class="signup-h1">sign up</h1>
+                <img id="frame" src="frame.png" alt="">
+                <form id="forms">
+                    <div class="user">
+                        <div class="box">
+                            <input id="username" type="text" name="username" placeholder="User Name" >
+                        </div>
+        
+                        <div class="box">
+                            <input id="email" type="text" name="email" placeholder="Email" >
+                        </div>
+
+                        <div class="box">
+                            <input id="re-password" type="password" name="password" placeholder="Re Password" >
+                        </div>
+                    </div>
+
+                    <div class="phone">
+                        <div class="box">
+                            <input id="phonenumber" type="text" name="phone" placeholder="Phone Number">
+                        </div>
+
+                        <div class="box">
+                            <input id="password" type="password" name="password" placeholder="Password" >
+                        </div>
+        
+                        <div class="box">
+                            <input id="certificate" type="file" name="cert" placeholder="Upload Certificate">
+                        </div>
+
+                        <div class="box">
+                            <input id="profile-photo" type="file" name="photo" placeholder="Profile Photo">
+                        </div>
+                    </div>
+                </form>
+
+                <form id="su" action="">
+                    <div class="box">
+                        <input onclick="register()" id="button" type="button" name="signup" value="Signup" >
+                    </div>
+                </form>
+
+                <div class="anch">
+                    <a id="have" style="text-decoration: none;" class="have-account" href="login page.html">have an account?</a> <span class="login"> 
+                    <a id="ll" style="text-decoration: none;" class="have-account login" href="login page.html"><span>login </span></a><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-up" id="save-popup">
+            <div class="inner">
+                <p id="sure-save">Do you want to save changes?</p>
+                <br><br><input id="yes" type="button" value="Yes">
+                <br><br><input id="no" type="button" value="No">
+            </div>
+        </div>
+    </div>
+
+    <script src="signlang.js"></script>
+
+</body>
+</html>
